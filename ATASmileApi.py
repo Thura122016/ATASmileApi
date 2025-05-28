@@ -79,7 +79,7 @@ def checkRoleMCGG(userid: str, zoneid: str, region: str = "br"):
             "checkrole":"1"
             }
         fullUrl = create_fullUrl("get_role_mcgg",region)
-        responseData = send_json_request("https://www.smile.one/br/merchant/game/checkrole?product=magicchessgogo", payload)
+        responseData = send_json_request(fullUrl, payload)
         return json.dumps({"apiOK": True, "requestTitle": "check-role", "product": "magicchessgogo","region": region, 'userid' : userid, 'zoneid' : zoneid, "response": responseData})
     except Exception as e:
         return json.dumps({"apiOK": False, "requestTitle": "check-role", "product": "magicchessgogo","region": region, 'userid' : userid, 'zoneid' : zoneid, "response": str(e)})

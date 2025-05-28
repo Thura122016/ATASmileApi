@@ -4,7 +4,6 @@ import time
 import requests
 
 def send_json_request(url: str, payload: dict) -> dict:
-    print(url,payload)
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "Mozilla/5.0",
