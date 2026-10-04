@@ -65,7 +65,7 @@ def createOrder(product: str,productid: str,userid: str, zoneid: str, region: st
             'zoneid' : zoneid
             }
         fulldata = create_fullData(payload)
-        fullUrl = create_fullUrl("get_role",region)
+        fullUrl = create_fullUrl("create_order",region)
         responseData = send_json_request(fullUrl, fulldata)
         return json.dumps({"apiOK": True, "requestTitle": "create-order", "product": product,"region": region,'productid' : productid, 'userid' : userid, 'zoneid' : zoneid, "response": responseData})
     except Exception as e:
